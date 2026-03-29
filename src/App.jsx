@@ -7,7 +7,6 @@ export default function TodoApp() {
   const addTask = () => {
     const trimmed = input.trim();
     if (!trimmed) return;
-    // 1. დავამატეთ 'completed: false' ობიექტში
     setTasks([...tasks, { id: Date.now(), name: trimmed, completed: false }]);
     setInput("");
   };
@@ -16,7 +15,7 @@ export default function TodoApp() {
     setTasks(tasks.filter((t) => t.id !== id));
   };
 
-  // 2. ახალი ფუნქცია სტატუსის შესაცვლელად
+
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
@@ -48,7 +47,7 @@ export default function TodoApp() {
                     key={task.id}
                     className="flex items-center justify-between bg-gray-50 border border-gray-200 rounded-lg px-3 py-2"
                   >
-                    {/* 3. დავამატეთ Checkbox და დინამიური კლასი ტექსტისთვის */}
+                    {}
                     <div className="flex items-center gap-3 flex-1 overflow-hidden">
                       <input
                         type="checkbox"
@@ -60,7 +59,7 @@ export default function TodoApp() {
                         className={`text-sm break-words cursor-pointer ${
                           task.completed ? "text-gray-400 line-through" : "text-gray-800"
                         }`}
-                        onClick={() => toggleTask(task.id)} // ტექსტზე დაჭერითაც რომ მოინიშნოს
+                        onClick={() => toggleTask(task.id)} 
                       >
                         {task.name}
                       </span>
@@ -81,7 +80,7 @@ export default function TodoApp() {
             </div>
           </div>
 
-          {/* Right Column — Add New Task */}
+          {}
           <div className="flex-1">
             <h2 className="text-sm font-medium text-gray-500 mb-3">Add new task</h2>
             <div className="flex gap-2">
